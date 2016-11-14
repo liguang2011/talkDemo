@@ -5,9 +5,6 @@
 //  Created by 李光 on 16/11/14.
 //  Copyright © 2016年 Firstlight. All rights reserved.
 //
-#define ScreenF [UIScreen mainScreen]
-#define ScreenY CGRectGetMaxY([UIScreen mainScreen].bounds)
-#define ScreenX CGRectGetMaxX([UIScreen mainScreen].bounds)
 #import "ViewController.h"
 #import "LGTalkViewController.h"
 

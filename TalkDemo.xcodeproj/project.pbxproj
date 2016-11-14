@@ -33,6 +33,7 @@
 		83816F431DDA0A8B002A03A7 /* LGTalkTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGTalkTableView.m; sourceTree = "<group>"; };
 		83816F451DDA0B2A002A03A7 /* LGTalkBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGTalkBottomView.h; sourceTree = "<group>"; };
 		83816F461DDA0B2A002A03A7 /* LGTalkBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGTalkBottomView.m; sourceTree = "<group>"; };
+		83816F481DDA179E002A03A7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		83917F211DD9EDF40037DACE /* LGTalkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGTalkViewController.h; sourceTree = "<group>"; };
 		83917F221DD9EDF40037DACE /* LGTalkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGTalkViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +82,7 @@
 				836C5ADA1DD9EB3500E47B9E /* Assets.xcassets */,
 				836C5ADC1DD9EB3500E47B9E /* LaunchScreen.storyboard */,
 				836C5ADF1DD9EB3500E47B9E /* Info.plist */,
+				83816F481DDA179E002A03A7 /* PrefixHeader.pch */,
 				836C5ACE1DD9EB3500E47B9E /* Supporting Files */,
 			);
 			path = TalkDemo;
@@ -282,6 +284,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TalkDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = TalkDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Firstlight.TalkDemo;
@@ -293,6 +297,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TalkDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = TalkDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Firstlight.TalkDemo;
