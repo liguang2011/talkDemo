@@ -46,6 +46,7 @@
 {
     [self.navigationController.navigationBar setHidden:NO];
     
+    
 }
 
 
