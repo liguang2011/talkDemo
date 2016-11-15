@@ -1,22 +1,14 @@
 //
-//  LGTalkBottomSubviewMore.m
+//  LGReceiveMessageView.m
 //  TalkDemo
 //
-//  Created by LG on 2016/11/15.
+//  Created by 李光 on 16/11/15.
 //  Copyright © 2016年 Firstlight. All rights reserved.
 //
 
-#import "LGTalkBottomSubMore.h"
-@interface LGTalkBottomSubMore()
+#import "LGReceiveMessageView.h"
 
-@property (nonatomic,strong)UIScrollView *scrollView;
-
-
-
-@end
-
-
-@implementation LGTalkBottomSubMore
+@implementation LGReceiveMessageView
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -38,6 +30,8 @@
 -(void)createDeauftUI
 {
     
+
 }
+
 
 @end

@@ -1,22 +1,14 @@
 //
-//  LGTalkBottomSubviewMore.m
+//  LGMsgContentView.m
 //  TalkDemo
 //
-//  Created by LG on 2016/11/15.
+//  Created by 李光 on 16/11/16.
 //  Copyright © 2016年 Firstlight. All rights reserved.
 //
 
-#import "LGTalkBottomSubMore.h"
-@interface LGTalkBottomSubMore()
+#import "LGMsgContentView.h"
 
-@property (nonatomic,strong)UIScrollView *scrollView;
-
-
-
-@end
-
-
-@implementation LGTalkBottomSubMore
+@implementation LGMsgContentView
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -25,7 +17,6 @@
     // Drawing code
 }
 */
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -35,7 +26,7 @@
     return self;
 }
 
--(void)createDeauftUI
+- (void)createDeauftUI
 {
     
 }

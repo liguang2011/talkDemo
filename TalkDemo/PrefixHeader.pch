@@ -22,3 +22,5 @@
 #define TalkBottomH 40
 
 #define FontDefault14 [UIFont boldSystemFontOfSize:(14)]
+
+#define HeadImageWidth 40

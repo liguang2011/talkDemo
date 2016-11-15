@@ -64,7 +64,7 @@
     CGPoint covPoint = [self convertPoint:point toView:self];
     
     
-    CGRect bottomBarRect = _bottomView.frame;
+    CGRect bottomBarRect = self.bottomView.frame;
     
     BOOL PointInBottomBar = CGRectContainsPoint(bottomBarRect, covPoint);
     
@@ -84,7 +84,7 @@
     e = event;
     
     BOOL textBeInput = NO;
-    if (CGRectContainsPoint(_keyBoardRect, covPoint)) {
+    if (CGRectContainsPoint(self.keyBoardRect, covPoint)) {
         textBeInput = YES;
     }
     
@@ -121,42 +121,37 @@
     
 }
 
+-(void)adjustBottomViewShowKeyBoard
+{
+
+}
+
+-(void)adjustMainViewShowKeyBoard
+{
+    
+}
+
+
 #pragma mark - 监听键盘弹出收起事件
 
 -(void)keyBoardShow:(NSNotification *)notification
 {
-    NSDictionary *userInfo = [notification userInfo];
-    NSNumber *duration = [userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
-    NSNumber *curve = [userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
-    CGRect keyboardRect;
-    [[userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue: &keyboardRect];
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    [UIView setAnimationDuration:[duration doubleValue]];
-    [UIView setAnimationCurve:(UIViewAnimationCurve)[curve intValue]];
+    CGRect keyBoardRect=[notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    self.keyBoardRect = keyBoardRect;
+    CGFloat deltaY= keyBoardRect.size.height;
+    [UIView animateWithDuration:[notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
+        self.bottomView.transform=CGAffineTransformMakeTranslation(0, -deltaY);
+    }];
     
-    _keyBoardRect = keyboardRect;
-    //[self.privateChatBottomBar keyBoardShow:YES];
-    //[self adjustViewShowKeyBoard:YES withKeyboardRect:keyboardRect];
-    
-    [UIView commitAnimations];
 }
 
 -(void)keyBoardHide:(NSNotification *)notification
 {
-    NSDictionary *userInfo = [notification userInfo];
-    NSNumber *duration = [userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
-    NSNumber *curve = [userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
-    CGRect keyboardRect;
-    [[userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue: &keyboardRect];
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    [UIView setAnimationDuration:[duration doubleValue]];
-    [UIView setAnimationCurve:(UIViewAnimationCurve)[curve intValue]];
-    //[self adjustViewShowKeyBoard:NO withKeyboardRect:keyboardRect];
     _keyBoardRect = CGRectMake(0, 0, 0, 0);
-    //[self.privateChatBottomBar keyBoardShow:NO];
-    [UIView commitAnimations];
+    [UIView animateWithDuration:[notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
+        self.bottomView.transform=CGAffineTransformIdentity;
+    }];
+    
 }
 
 #pragma mark tableViewDelegate

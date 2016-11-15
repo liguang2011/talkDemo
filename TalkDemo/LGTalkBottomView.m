@@ -7,6 +7,8 @@
 //
 
 #import "LGTalkBottomView.h"
+#import "LGSendMessageView.h"
+
 @interface LGTalkBottomView()
 
 
@@ -56,7 +58,7 @@
     textView.frame = CGRectMake(textViewX, textViewY, textViewW, textViewH);
     textView.backgroundColor = [UIColor whiteColor];
     textView.textColor = [UIColor blackColor];
-    textView.layer.cornerRadius = textViewH / 2;
+    textView.layer.cornerRadius = textViewH / 8;
     textView.layer.masksToBounds = YES;
     [self addSubview: textView];
     
@@ -95,15 +97,16 @@
 
 -(void)btnClick : (UIButton *)sender
 {
+    
     switch (sender.tag) {
-        case 10:
+        case 10://face
             
             break;
          
-        case 11:
+        case 11://send
             
             break;
-        case 12:
+        case 12://more
             
             break;
         default:

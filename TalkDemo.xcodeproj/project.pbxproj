@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		831C9B951DDB5DBA0004512D /* LGSendMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C9B941DDB5DBA0004512D /* LGSendMessageView.m */; };
+		831C9B981DDB5DFE0004512D /* LGReceiveMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 831C9B971DDB5DFE0004512D /* LGReceiveMessageView.m */; };
+		836245971DDB6A420077130E /* LGMsgContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 836245961DDB6A420077130E /* LGMsgContentView.m */; };
 		836C5AD01DD9EB3500E47B9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 836C5ACF1DD9EB3500E47B9E /* main.m */; };
 		836C5AD31DD9EB3500E47B9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 836C5AD21DD9EB3500E47B9E /* AppDelegate.m */; };
 		836C5AD61DD9EB3500E47B9E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836C5AD51DD9EB3500E47B9E /* ViewController.m */; };
@@ -22,6 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		831C9B931DDB5DBA0004512D /* LGSendMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGSendMessageView.h; path = TalkDemo/LGSendMessageView.h; sourceTree = "<group>"; };
+		831C9B941DDB5DBA0004512D /* LGSendMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGSendMessageView.m; path = TalkDemo/LGSendMessageView.m; sourceTree = "<group>"; };
+		831C9B961DDB5DFE0004512D /* LGReceiveMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGReceiveMessageView.h; path = TalkDemo/LGReceiveMessageView.h; sourceTree = "<group>"; };
+		831C9B971DDB5DFE0004512D /* LGReceiveMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGReceiveMessageView.m; path = TalkDemo/LGReceiveMessageView.m; sourceTree = "<group>"; };
+		836245951DDB6A420077130E /* LGMsgContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGMsgContentView.h; path = TalkDemo/LGMsgContentView.h; sourceTree = "<group>"; };
+		836245961DDB6A420077130E /* LGMsgContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGMsgContentView.m; path = TalkDemo/LGMsgContentView.m; sourceTree = "<group>"; };
 		836C5ACB1DD9EB3500E47B9E /* TalkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		836C5ACF1DD9EB3500E47B9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		836C5AD11DD9EB3500E47B9E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -32,19 +41,19 @@
 		836C5ADA1DD9EB3500E47B9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		836C5ADD1DD9EB3500E47B9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		836C5ADF1DD9EB3500E47B9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		83816F421DDA0A8B002A03A7 /* LGTalkTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGTalkTableView.h; sourceTree = "<group>"; };
-		83816F431DDA0A8B002A03A7 /* LGTalkTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGTalkTableView.m; sourceTree = "<group>"; };
-		83816F451DDA0B2A002A03A7 /* LGTalkBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGTalkBottomView.h; sourceTree = "<group>"; };
-		83816F461DDA0B2A002A03A7 /* LGTalkBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGTalkBottomView.m; sourceTree = "<group>"; };
+		83816F421DDA0A8B002A03A7 /* LGTalkTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGTalkTableView.h; path = TalkDemo/LGTalkTableView.h; sourceTree = "<group>"; };
+		83816F431DDA0A8B002A03A7 /* LGTalkTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGTalkTableView.m; path = TalkDemo/LGTalkTableView.m; sourceTree = "<group>"; };
+		83816F451DDA0B2A002A03A7 /* LGTalkBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGTalkBottomView.h; path = TalkDemo/LGTalkBottomView.h; sourceTree = "<group>"; };
+		83816F461DDA0B2A002A03A7 /* LGTalkBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGTalkBottomView.m; path = TalkDemo/LGTalkBottomView.m; sourceTree = "<group>"; };
 		83816F481DDA179E002A03A7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		83917F211DD9EDF40037DACE /* LGTalkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGTalkViewController.h; sourceTree = "<group>"; };
 		83917F221DD9EDF40037DACE /* LGTalkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGTalkViewController.m; sourceTree = "<group>"; };
 		840354BD1DDB02FB00BE4719 /* LGTalkMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGTalkMainView.h; sourceTree = "<group>"; };
 		840354BE1DDB02FB00BE4719 /* LGTalkMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGTalkMainView.m; sourceTree = "<group>"; };
-		840354C11DDB15FE00BE4719 /* LGTalkBottomSubMore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGTalkBottomSubMore.h; sourceTree = "<group>"; };
-		840354C21DDB15FE00BE4719 /* LGTalkBottomSubMore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGTalkBottomSubMore.m; sourceTree = "<group>"; };
-		840354C41DDB163500BE4719 /* LGTalkBottomSubFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGTalkBottomSubFace.h; sourceTree = "<group>"; };
-		840354C51DDB163500BE4719 /* LGTalkBottomSubFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGTalkBottomSubFace.m; sourceTree = "<group>"; };
+		840354C11DDB15FE00BE4719 /* LGTalkBottomSubMore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGTalkBottomSubMore.h; path = TalkDemo/LGTalkBottomSubMore.h; sourceTree = "<group>"; };
+		840354C21DDB15FE00BE4719 /* LGTalkBottomSubMore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGTalkBottomSubMore.m; path = TalkDemo/LGTalkBottomSubMore.m; sourceTree = "<group>"; };
+		840354C41DDB163500BE4719 /* LGTalkBottomSubFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGTalkBottomSubFace.h; path = TalkDemo/LGTalkBottomSubFace.h; sourceTree = "<group>"; };
+		840354C51DDB163500BE4719 /* LGTalkBottomSubFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGTalkBottomSubFace.m; path = TalkDemo/LGTalkBottomSubFace.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		831C9B991DDB660F0004512D /* BottomView */ = {
+			isa = PBXGroup;
+			children = (
+				83816F451DDA0B2A002A03A7 /* LGTalkBottomView.h */,
+				83816F461DDA0B2A002A03A7 /* LGTalkBottomView.m */,
+				840354C11DDB15FE00BE4719 /* LGTalkBottomSubMore.h */,
+				840354C21DDB15FE00BE4719 /* LGTalkBottomSubMore.m */,
+				840354C41DDB163500BE4719 /* LGTalkBottomSubFace.h */,
+				840354C51DDB163500BE4719 /* LGTalkBottomSubFace.m */,
+			);
+			name = BottomView;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		831C9B9A1DDB66AA0004512D /* MidView */ = {
+			isa = PBXGroup;
+			children = (
+				831C9B961DDB5DFE0004512D /* LGReceiveMessageView.h */,
+				831C9B971DDB5DFE0004512D /* LGReceiveMessageView.m */,
+				831C9B931DDB5DBA0004512D /* LGSendMessageView.h */,
+				831C9B941DDB5DBA0004512D /* LGSendMessageView.m */,
+				836245951DDB6A420077130E /* LGMsgContentView.h */,
+				836245961DDB6A420077130E /* LGMsgContentView.m */,
+				83816F421DDA0A8B002A03A7 /* LGTalkTableView.h */,
+				83816F431DDA0A8B002A03A7 /* LGTalkTableView.m */,
+			);
+			name = MidView;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		836C5AC21DD9EB3500E47B9E = {
 			isa = PBXGroup;
 			children = (
@@ -107,14 +146,8 @@
 		840354C01DDB14AB00BE4719 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				83816F421DDA0A8B002A03A7 /* LGTalkTableView.h */,
-				83816F431DDA0A8B002A03A7 /* LGTalkTableView.m */,
-				83816F451DDA0B2A002A03A7 /* LGTalkBottomView.h */,
-				83816F461DDA0B2A002A03A7 /* LGTalkBottomView.m */,
-				840354C11DDB15FE00BE4719 /* LGTalkBottomSubMore.h */,
-				840354C21DDB15FE00BE4719 /* LGTalkBottomSubMore.m */,
-				840354C41DDB163500BE4719 /* LGTalkBottomSubFace.h */,
-				840354C51DDB163500BE4719 /* LGTalkBottomSubFace.m */,
+				831C9B9A1DDB66AA0004512D /* MidView */,
+				831C9B991DDB660F0004512D /* BottomView */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -151,6 +184,7 @@
 					836C5ACA1DD9EB3500E47B9E = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = K7M5Q2DUD5;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -191,14 +225,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				840354C31DDB15FE00BE4719 /* LGTalkBottomSubMore.m in Sources */,
+				836245971DDB6A420077130E /* LGMsgContentView.m in Sources */,
 				83816F471DDA0B2A002A03A7 /* LGTalkBottomView.m in Sources */,
 				840354C61DDB163500BE4719 /* LGTalkBottomSubFace.m in Sources */,
 				836C5AD61DD9EB3500E47B9E /* ViewController.m in Sources */,
 				83816F441DDA0A8B002A03A7 /* LGTalkTableView.m in Sources */,
 				836C5AD31DD9EB3500E47B9E /* AppDelegate.m in Sources */,
 				836C5AD01DD9EB3500E47B9E /* main.m in Sources */,
+				831C9B981DDB5DFE0004512D /* LGReceiveMessageView.m in Sources */,
 				840354BF1DDB02FB00BE4719 /* LGTalkMainView.m in Sources */,
 				83917F231DD9EDF40037DACE /* LGTalkViewController.m in Sources */,
+				831C9B951DDB5DBA0004512D /* LGSendMessageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +347,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = K7M5Q2DUD5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TalkDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = TalkDemo/Info.plist;
@@ -323,6 +362,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = K7M5Q2DUD5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TalkDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = TalkDemo/Info.plist;
