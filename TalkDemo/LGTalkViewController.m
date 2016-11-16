@@ -9,17 +9,25 @@
 #import "LGTalkViewController.h"
 #import "LGTalkMainView.h"
 
-@interface LGTalkViewController ()<UITableViewDelegate>
+@interface LGTalkViewController ()
 
 @property (nonatomic,assign)CGRect navRect;
 @end
 
 @implementation LGTalkViewController
+
+-(CGRect)navRect
+{
+    _navRect = self.navigationController.navigationBar.frame;
+    return _navRect;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self createDefaultUI];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,11 +44,8 @@
 }
 */
 
--(CGRect)navRect
-{
-    _navRect = self.navigationController.navigationBar.frame;
-    return _navRect;
-}
+
+
 -(void)createDefaultUI
 {
     [self.navigationController.navigationBar setHidden:NO];
@@ -52,7 +57,35 @@
     
 }
 
+-(void)setGroup:(XZGroup *)group
+{
+    _group = group;
+    if (!_group) {
+        self.title = self.group.gName;
+    }
+}
 
+
+
+
+
+
+
+
+
+
+
+#pragma mark - Getter and Setter
+
+//- (ICChatBoxViewController *) chatBoxVC
+//{
+//    if (_chatBoxVC == nil) {
+//        _chatBoxVC = [[ICChatBoxViewController alloc] init];
+//        [_chatBoxVC.view setFrame:CGRectMake(0,APP_Frame_Height-HEIGHT_TABBAR, App_Frame_Width, APP_Frame_Height)];
+//        _chatBoxVC.delegate = self;
+//    }
+//    return _chatBoxVC;
+//}
 
 
 @end

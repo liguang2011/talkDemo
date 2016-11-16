@@ -1,5 +1,5 @@
 //
-//  LGTalkTableView.h
+//  LGTalkTableViewCell.h
 //  TalkDemo
 //
 //  Created by 李光 on 16/11/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LGTalkTableView : UITableView
+@interface LGTalkTableViewCell : UITableViewCell
 
 @end

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface LGTalkViewController : UIViewController
-
+@property (nonatomic, strong) XZGroup *group;
 @end

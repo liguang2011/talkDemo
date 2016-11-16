@@ -36,7 +36,7 @@
 -(void)createDeauftUI
 {
     _headImage = [[UIImageView alloc]init];
-    _headImage.frame = CGRectMake(0, 0, HeadImageWidth, HeadImageWidth);
+    _headImage.frame = CGRectMake(0, 5, HeadImageWidth, HeadImageWidth);
 }
 
 @end

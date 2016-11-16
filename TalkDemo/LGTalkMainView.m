@@ -7,11 +7,36 @@
 //
 
 #import "LGTalkMainView.h"
-#import "LGTalkTableView.h"
 #import "LGTalkBottomView.h"
 
-@interface LGTalkMainView()
-@property (readonly,nonatomic,strong)LGTalkTableView *talkTable;
+@interface LGTalkMainView()<UITableViewDataSource,UITableViewDelegate>
+{
+    CGRect _smallRect;
+    CGRect _bigRect;
+    
+    UIMenuItem * _copyMenuItem;
+    UIMenuItem * _deleteMenuItem;
+    UIMenuItem * _forwardMenuItem;
+    UIMenuItem * _recallMenuItem;
+    NSIndexPath *_longIndexPath;
+    
+    BOOL   _isKeyBoardAppear;     // 键盘是否弹出来了
+}
+
+//@property (nonatomic, strong) ICChatBoxViewController *chatBoxVC;
+/** 数据源 */
+@property (nonatomic, strong) NSMutableArray *dataSource;
+/** voice path */
+@property (nonatomic, copy) NSString *voicePath;
+
+@property (nonatomic, strong) UIImageView *currentVoiceIcon;
+@property (nonatomic, strong) UIImageView *presentImageView;
+@property (nonatomic, assign)  BOOL presentFlag;  // 是否model出控制器
+@property (nonatomic, strong) NSTimer *timer;
+//@property (nonatomic, strong) ICVoiceHud *voiceHud;
+
+
+@property (nonatomic,strong)UITableView *tableView;
 @property (nonatomic,strong)LGTalkBottomView *bottomView;
 @property (nonatomic,assign)CGRect keyBoardRect;
 
@@ -44,11 +69,17 @@
     [self addNotifications];
     
     //聊天界面
-    if (!_talkTable) {
-        _talkTable = [[LGTalkTableView alloc]init];
-        _talkTable.frame = CGRectMake(0, 0, ScreenX, ScreenY - TalkBottomH);
-        //_talkTable.separatorStyle = NO;//分界线
-        [self addSubview:_talkTable];
+    if (!self.tableView) {
+        self.tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+//        _tableView.delegate = self;
+//        _tableView.dataSource = self;
+        //_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        self.tableView.frame = CGRectMake(0, 0, ScreenX, ScreenY - TalkBottomH);
+        self.tableView.backgroundColor = IColor(240, 237, 237);
+        [self addSubview: _tableView];
+        
+//        [self.tableView registerClass:[ICChatMessageTextCell class] forCellReuseIdentifier:TypeText];
+//        [self.tableView registerClass:[ICChatMessageImageCell class] forCellReuseIdentifier:TypePic];
     }
     //底部编辑
     if (!_bottomView) {
@@ -155,8 +186,6 @@
 }
 
 #pragma mark tableViewDelegate
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 0;
-}
+
 
 @end
