@@ -12,6 +12,8 @@
 @interface LGTalkViewController ()
 
 @property (nonatomic,assign)CGRect navRect;
+
+
 @end
 
 @implementation LGTalkViewController
@@ -54,6 +56,7 @@
     
     LGTalkMainView *talkMainView = [[LGTalkMainView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(_navRect), ScreenX, ScreenY - CGRectGetMaxY(_navRect))];
     [self.view addSubview: talkMainView];
+    talkMainView.navRect = self.navRect;
     
 }
 
@@ -64,14 +67,6 @@
         self.title = self.group.gName;
     }
 }
-
-
-
-
-
-
-
-
 
 
 

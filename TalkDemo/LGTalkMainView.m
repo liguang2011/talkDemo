@@ -9,7 +9,7 @@
 #import "LGTalkMainView.h"
 #import "LGTalkBottomView.h"
 
-@interface LGTalkMainView()<UITableViewDataSource,UITableViewDelegate>
+@interface LGTalkMainView()<UITableViewDataSource,UITableViewDelegate,LGTalkBottomViewDelegate>
 {
     CGRect _smallRect;
     CGRect _bigRect;
@@ -84,8 +84,9 @@
     //底部编辑
     if (!_bottomView) {
         _bottomView = [[LGTalkBottomView alloc]initWithFrame:CGRectMake(0, self.frame.size.height - TalkBottomH, ScreenX, TalkBottomH)];
-        _bottomView.backgroundColor = [UIColor blackColor];
+        _bottomView.delegate = self;
         [self addSubview:_bottomView];
+        
     }
     
 }
@@ -162,18 +163,22 @@
     
 }
 
+#pragma mark sendTextMessage
+
+
+
 
 #pragma mark - 监听键盘弹出收起事件
 
 -(void)keyBoardShow:(NSNotification *)notification
 {
+    self.bottomView.frame = CGRectMake(0, self.frame.size.height - TalkBottomH, ScreenX, TalkBottomH);
     CGRect keyBoardRect=[notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     self.keyBoardRect = keyBoardRect;
     CGFloat deltaY= keyBoardRect.size.height;
     [UIView animateWithDuration:[notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
         self.bottomView.transform=CGAffineTransformMakeTranslation(0, -deltaY);
     }];
-    
 }
 
 -(void)keyBoardHide:(NSNotification *)notification
@@ -185,7 +190,35 @@
     
 }
 
-#pragma mark tableViewDelegate
+#pragma mark - UITableViewDelegate
 
 
+
+
+#pragma mark - BottomDelegate
+
+- (void)didChangeChatBoxHeight:(CGFloat)height
+{
+    self.bottomView.top = self.bottom - height;
+    self.tableView.height = self.frame.size.height - self.bottomView.height;
+    if (height == HEIGHT_TABBAR) {
+        [self.tableView reloadData];
+        _isKeyBoardAppear  = NO;
+    } else {
+        [self scrollToBottom];
+        _isKeyBoardAppear  = YES;
+    }
+//    if (self.textView == nil) {
+//        self.textView = chatboxViewController.chatBox.textView;
+//    }
+}
+
+#pragma mark - private
+
+- (void) scrollToBottom
+{
+    if (self.dataSource.count > 0) {
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.dataSource.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+    }
+}
 @end

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface LGTalkMainView : UIView
-
+@property (nonatomic,assign)CGRect navRect;
 @end

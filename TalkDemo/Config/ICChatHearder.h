@@ -13,8 +13,10 @@
 //#import "ICChatBoxViewController.h"
 #import "ICChatConst.h"
 #import "UIView+Extension.h"
-#import "UIImage+Extension.h"
+//#import "UIImage+Extension.h"
 #import "NSString+Extension.h"
+#import "ICChatBoxMoreView.h"
+#import "ICChatBoxMoreViewItem.h"
 //#import "ICChatMessageImageCell.h"
 //#import "ICChatMessageTextCell.h"
 //#import "ICChatMessageVideoCell.h"
@@ -37,6 +39,7 @@
 //#import "ICAVPlayer.h"
 //#import "ICPhotoBrowserController.h"
 
+#import "LGTalkBottomSubFace.h"
 
 
 

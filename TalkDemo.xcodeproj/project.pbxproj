@@ -19,7 +19,6 @@
 		83816F471DDA0B2A002A03A7 /* LGTalkBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83816F461DDA0B2A002A03A7 /* LGTalkBottomView.m */; };
 		83917F231DD9EDF40037DACE /* LGTalkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83917F221DD9EDF40037DACE /* LGTalkViewController.m */; };
 		840354BF1DDB02FB00BE4719 /* LGTalkMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 840354BE1DDB02FB00BE4719 /* LGTalkMainView.m */; };
-		840354C31DDB15FE00BE4719 /* LGTalkBottomSubMore.m in Sources */ = {isa = PBXBuildFile; fileRef = 840354C21DDB15FE00BE4719 /* LGTalkBottomSubMore.m */; };
 		840354C61DDB163500BE4719 /* LGTalkBottomSubFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 840354C51DDB163500BE4719 /* LGTalkBottomSubFace.m */; };
 		849A45581DDC4D56002C9854 /* XZGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A45551DDC4D56002C9854 /* XZGroup.m */; };
 		849A45591DDC4D56002C9854 /* XZUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A45571DDC4D56002C9854 /* XZUser.m */; };
@@ -54,6 +53,9 @@
 		849A45E71DDC6627002C9854 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A45B01DDC6627002C9854 /* NSObject+MJKeyValue.m */; };
 		849A45E81DDC6627002C9854 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A45B21DDC6627002C9854 /* NSObject+MJProperty.m */; };
 		849A45E91DDC6627002C9854 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A45B41DDC6627002C9854 /* NSString+MJExtension.m */; };
+		849A46071DDCAC57002C9854 /* ICChatBoxMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A45F91DDCAC57002C9854 /* ICChatBoxMoreView.m */; };
+		849A46081DDCAC57002C9854 /* ICChatBoxMoreViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A45FB1DDCAC57002C9854 /* ICChatBoxMoreViewItem.m */; };
+		849A461A1DDCDBB8002C9854 /* XZEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A46161DDCDBB8002C9854 /* XZEmotion.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,8 +82,6 @@
 		83917F221DD9EDF40037DACE /* LGTalkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGTalkViewController.m; path = TalkDemo/LGTalkViewController.m; sourceTree = "<group>"; };
 		840354BD1DDB02FB00BE4719 /* LGTalkMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGTalkMainView.h; path = TalkDemo/LGTalkMainView.h; sourceTree = "<group>"; };
 		840354BE1DDB02FB00BE4719 /* LGTalkMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGTalkMainView.m; path = TalkDemo/LGTalkMainView.m; sourceTree = "<group>"; };
-		840354C11DDB15FE00BE4719 /* LGTalkBottomSubMore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGTalkBottomSubMore.h; path = TalkDemo/LGTalkBottomSubMore.h; sourceTree = "<group>"; };
-		840354C21DDB15FE00BE4719 /* LGTalkBottomSubMore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGTalkBottomSubMore.m; path = TalkDemo/LGTalkBottomSubMore.m; sourceTree = "<group>"; };
 		840354C41DDB163500BE4719 /* LGTalkBottomSubFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGTalkBottomSubFace.h; path = TalkDemo/LGTalkBottomSubFace.h; sourceTree = "<group>"; };
 		840354C51DDB163500BE4719 /* LGTalkBottomSubFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGTalkBottomSubFace.m; path = TalkDemo/LGTalkBottomSubFace.m; sourceTree = "<group>"; };
 		849A45541DDC4D56002C9854 /* XZGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZGroup.h; sourceTree = "<group>"; };
@@ -157,6 +157,12 @@
 		849A45B21DDC6627002C9854 /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		849A45B31DDC6627002C9854 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		849A45B41DDC6627002C9854 /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		849A45F81DDCAC57002C9854 /* ICChatBoxMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICChatBoxMoreView.h; path = TalkDemo/chatBox/ICChatBoxMoreView.h; sourceTree = "<group>"; };
+		849A45F91DDCAC57002C9854 /* ICChatBoxMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICChatBoxMoreView.m; path = TalkDemo/chatBox/ICChatBoxMoreView.m; sourceTree = "<group>"; };
+		849A45FA1DDCAC57002C9854 /* ICChatBoxMoreViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICChatBoxMoreViewItem.h; path = TalkDemo/chatBox/ICChatBoxMoreViewItem.h; sourceTree = "<group>"; };
+		849A45FB1DDCAC57002C9854 /* ICChatBoxMoreViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICChatBoxMoreViewItem.m; path = TalkDemo/chatBox/ICChatBoxMoreViewItem.m; sourceTree = "<group>"; };
+		849A46151DDCDBB8002C9854 /* XZEmotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZEmotion.h; sourceTree = "<group>"; };
+		849A46161DDCDBB8002C9854 /* XZEmotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZEmotion.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,10 +181,10 @@
 			children = (
 				83816F451DDA0B2A002A03A7 /* LGTalkBottomView.h */,
 				83816F461DDA0B2A002A03A7 /* LGTalkBottomView.m */,
-				840354C11DDB15FE00BE4719 /* LGTalkBottomSubMore.h */,
-				840354C21DDB15FE00BE4719 /* LGTalkBottomSubMore.m */,
 				840354C41DDB163500BE4719 /* LGTalkBottomSubFace.h */,
 				840354C51DDB163500BE4719 /* LGTalkBottomSubFace.m */,
+				849A460D1DDCADD5002C9854 /* more */,
+				849A45F11DDCAC57002C9854 /* chatBox */,
 			);
 			name = Bottom;
 			path = ..;
@@ -244,6 +250,7 @@
 		840354C01DDB14AB00BE4719 /* sub */ = {
 			isa = PBXGroup;
 			children = (
+				849A460E1DDCDBB8002C9854 /* Model */,
 				831C9B9A1DDB66AA0004512D /* Mid */,
 				831C9B991DDB660F0004512D /* Bottom */,
 			);
@@ -253,9 +260,9 @@
 		849A45531DDC4D56002C9854 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				849A455D1DDC5139002C9854 /* ICChatHearder.h */,
 				849A455B1DDC5139002C9854 /* ICChatBoxViewControllerDelegate.h */,
 				849A455C1DDC5139002C9854 /* ICChatConst.h */,
-				849A455D1DDC5139002C9854 /* ICChatHearder.h */,
 				849A455E1DDC5139002C9854 /* ICChatServerDefs.h */,
 				849A455F1DDC5139002C9854 /* ICMessageConst.h */,
 				849A45601DDC5139002C9854 /* ICMessageConst.m */,
@@ -408,6 +415,34 @@
 			path = MJExtension;
 			sourceTree = "<group>";
 		};
+		849A45F11DDCAC57002C9854 /* chatBox */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = chatBox;
+			path = TalkDemo/chatBox;
+			sourceTree = "<group>";
+		};
+		849A460D1DDCADD5002C9854 /* more */ = {
+			isa = PBXGroup;
+			children = (
+				849A45F81DDCAC57002C9854 /* ICChatBoxMoreView.h */,
+				849A45F91DDCAC57002C9854 /* ICChatBoxMoreView.m */,
+				849A45FA1DDCAC57002C9854 /* ICChatBoxMoreViewItem.h */,
+				849A45FB1DDCAC57002C9854 /* ICChatBoxMoreViewItem.m */,
+			);
+			name = more;
+			sourceTree = "<group>";
+		};
+		849A460E1DDCDBB8002C9854 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				849A46151DDCDBB8002C9854 /* XZEmotion.h */,
+				849A46161DDCDBB8002C9854 /* XZEmotion.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -483,7 +518,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				840354C31DDB15FE00BE4719 /* LGTalkBottomSubMore.m in Sources */,
 				836245971DDB6A420077130E /* LGMsgContentView.m in Sources */,
 				849A45591DDC4D56002C9854 /* XZUser.m in Sources */,
 				849A45E71DDC6627002C9854 /* NSObject+MJKeyValue.m in Sources */,
@@ -498,10 +532,12 @@
 				849A45CC1DDC6627002C9854 /* NSDictionary+Extension.m in Sources */,
 				849A45D71DDC6627002C9854 /* MASConstraintMaker.m in Sources */,
 				849A45DD1DDC6627002C9854 /* View+MASAdditions.m in Sources */,
+				849A461A1DDCDBB8002C9854 /* XZEmotion.m in Sources */,
 				849A45DE1DDC6627002C9854 /* ViewController+MASAdditions.m in Sources */,
 				849A45DC1DDC6627002C9854 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				849A45CB1DDC6627002C9854 /* NSDate+Extension.m in Sources */,
 				849A45D61DDC6627002C9854 /* MASConstraint.m in Sources */,
+				849A46071DDCAC57002C9854 /* ICChatBoxMoreView.m in Sources */,
 				849A45D01DDC6627002C9854 /* UIResponder+GXRouter.m in Sources */,
 				849A45E11DDC6627002C9854 /* MJFoundation.m in Sources */,
 				849A45DA1DDC6627002C9854 /* MASViewConstraint.m in Sources */,
@@ -521,6 +557,7 @@
 				849A45D51DDC6627002C9854 /* MASCompositeConstraint.m in Sources */,
 				849A45D31DDC6627002C9854 /* KILabel.m in Sources */,
 				849A45E91DDC6627002C9854 /* NSString+MJExtension.m in Sources */,
+				849A46081DDCAC57002C9854 /* ICChatBoxMoreViewItem.m in Sources */,
 				849A45E01DDC6627002C9854 /* MJExtensionConst.m in Sources */,
 				831C9B951DDB5DBA0004512D /* LGSendMessageView.m in Sources */,
 				849A45CE1DDC6627002C9854 /* UIGestureRecognizer+YYAdd.m in Sources */,

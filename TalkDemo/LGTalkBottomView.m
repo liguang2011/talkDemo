@@ -9,7 +9,7 @@
 #import "LGTalkBottomView.h"
 #import "LGSendMessageView.h"
 
-@interface LGTalkBottomView()<UITextViewDelegate>
+@interface LGTalkBottomView()<UITextViewDelegate,ICChatBoxMoreViewDelegate>
 
 /** chotBox的顶部边线 */
 @property (nonatomic, strong) UIView *topLine;
@@ -23,6 +23,9 @@
 @property (nonatomic, strong) UIButton *talkButton;
 
 @property (nonatomic, strong) UITextView *textView;
+
+
+
 
 @end
 @implementation LGTalkBottomView
@@ -45,13 +48,13 @@
 
 -(void)createDefualtUI
 {
-    [self setBackgroundColor:IColor(241, 241, 248)];
+    [self setBackgroundColor:IColor(241.0, 241.0, 248.0)];
     [self addSubview:self.topLine];
     [self addSubview:self.voiceButton];
     [self addSubview:self.textView];
     [self addSubview:self.faceButton];
     [self addSubview:self.moreButton];
-//    [self addSubview:self.talkButton];
+    [self addSubview:self.talkButton];
 }
 -(void)btnClick : (UIButton *)sender
 {
@@ -165,13 +168,148 @@
     
 }
 
--(void)moreButtonDown:(id)sender
+// 更多（+）按钮
+- (void) moreButtonDown:(UIButton *)sender
 {
+    ICChatBoxStatus lastStatus = self.status;
+    if (lastStatus == ICChatBoxStatusShowMore) { // 当前显示的就是more页面
+        self.status = ICChatBoxStatusShowKeyboard;
+        [self.textView becomeFirstResponder];
+    } else {
+        [self.talkButton setHidden:YES];
+        [self.textView setHidden:NO];
+        [_voiceButton setImage:[UIImage imageNamed:@"ToolViewInputVoice"] forState:UIControlStateNormal];
+        
+        self.status = ICChatBoxStatusShowMore;
+        if (lastStatus == ICChatBoxStatusShowFace) {  // 改变按钮样式
+            [_faceButton setImage:[UIImage imageNamed:@"ToolViewEmotion"] forState:UIControlStateNormal];
+        } else if (lastStatus == ICChatBoxStatusShowVoice) {
+            [_talkButton setHidden:YES];
+            [_textView setHidden:NO];
+            [_voiceButton setImage:[UIImage imageNamed:@"ToolViewInputVoice"] forState:UIControlStateNormal];
+        } else if (lastStatus == ICChatBoxStatusShowKeyboard) {
+            [self.textView resignFirstResponder];
+            self.status = ICChatBoxStatusShowMore;
+        }
+    }
+
+    [self chatBox:lastStatus : self.status];
+}
+
+- (void)chatBox:(ICChatBoxStatus)fromStatus :(ICChatBoxStatus)toStatus
+{
+    if (toStatus == ICChatBoxStatusShowKeyboard) {  // 显示键盘
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            //            [self.chatBoxFaceView removeFromSuperview];
+            [self.chatBoxMoreView removeFromSuperview];
+        });
+        
+        return;
+    } else if (toStatus == ICChatBoxStatusShowVoice) {    // 语音输入按钮
+        [UIView animateWithDuration:0.3 animations:^{
+            if (_delegate && [_delegate respondsToSelector:@selector(didChangeChatBoxHeight:)]) {
+                [_delegate didChangeChatBoxHeight:HEIGHT_TABBAR];
+            }
+        } completion:^(BOOL finished) {
+//            [self.chatBoxFaceView removeFromSuperview];
+            [self.chatBoxMoreView removeFromSuperview];
+        }];
+    } else if (toStatus == ICChatBoxStatusShowFace) {     // 表情面板
+        if (fromStatus == ICChatBoxStatusShowVoice || fromStatus == ICChatBoxStatusNothing) {
+        } else {  // 表情高度变化
+        }
+    
+    } else if (toStatus == ICChatBoxStatusShowMore) {
+        if (fromStatus == ICChatBoxStatusShowVoice || fromStatus == ICChatBoxStatusNothing) {
+            self.chatBoxMoreView.y = HEIGHT_TABBAR;
+            
+            [self addSubview:self.chatBoxMoreView];
+            
+            [UIView animateWithDuration:0.3 animations:^{
+                if (_delegate && [_delegate respondsToSelector:@selector(didChangeChatBoxHeight:)]) {
+                    [_delegate  didChangeChatBoxHeight:HEIGHT_TABBAR + HEIGHT_CHATBOXVIEW];
+                }
+            }];
+        } else {
+            self.chatBoxMoreView.y = HEIGHT_TABBAR + HEIGHT_CHATBOXVIEW;
+            [self addSubview:self.chatBoxMoreView];
+            [UIView animateWithDuration:0.3 animations:^{
+                self.chatBoxMoreView.y = HEIGHT_TABBAR;
+            } completion:^(BOOL finished) {
+//                [self.chatBoxFaceView removeFromSuperview];
+            }];
+            
+            [UIView animateWithDuration:0.2 animations:^{
+                if (_delegate && [_delegate respondsToSelector:@selector(didChangeChatBoxHeight:)]) {
+                    [_delegate didChangeChatBoxHeight:HEIGHT_TABBAR + HEIGHT_CHATBOXVIEW];
+                }
+            }];
+        }
+    }
     
 }
 
--(void)faceButtonDown:(id)sender
+
+// 表情按钮
+- (void) faceButtonDown:(UIButton *)sender
 {
+
+    
     
 }
+
+
+#pragma mark - UITextViewDelegate
+
+- (void) textViewDidBeginEditing:(UITextView *)textView
+{
+    self.status = ICChatBoxStatusShowKeyboard;
+}
+
+- (void) textViewDidChange:(UITextView *)textView
+{
+    if (textView.text.length > 100) { // 限制10字内
+        textView.text = [textView.text substringToIndex:10];
+    }
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    if ([text isEqualToString:@"\n"]){
+        if (self.textView.text.length > 0) {     // send Text
+//            if (_delegate && [_delegate respondsToSelector:@selector(chatBox:sendTextMessage:)]) {
+//                [_delegate sendTextMessage:self.textView.text];
+//            }
+        }
+        [self.textView setText:@""];
+        return NO;
+    }
+    return YES;
+}
+
+
+
+#pragma mark - Getter and Setter
+
+- (ICChatBoxMoreView *)chatBoxMoreView
+{
+    if (nil == _chatBoxMoreView) {
+        _chatBoxMoreView = [[ICChatBoxMoreView alloc] initWithFrame:CGRectMake(0, HEIGHT_TABBAR, App_Frame_Width, HEIGHT_CHATBOXVIEW)];
+        _chatBoxMoreView.delegate = self;
+        // 创建Item
+        ICChatBoxMoreViewItem *photosItem = [ICChatBoxMoreViewItem createChatBoxMoreItemWithTitle:@"照片"
+                                                                                        imageName:@"sharemore_pic"];
+        ICChatBoxMoreViewItem *takePictureItem = [ICChatBoxMoreViewItem createChatBoxMoreItemWithTitle:@"拍摄"
+                                                                                             imageName:@"sharemore_video"];
+        ICChatBoxMoreViewItem *videoItem = [ICChatBoxMoreViewItem createChatBoxMoreItemWithTitle:@"小视频"
+                                                                                       imageName:@"sharemore_sight"];
+        ICChatBoxMoreViewItem *docItem   = [ICChatBoxMoreViewItem createChatBoxMoreItemWithTitle:@"文件" imageName:@"sharemore_wallet"];
+        [_chatBoxMoreView setItems:[[NSMutableArray alloc] initWithObjects:photosItem, takePictureItem, videoItem,docItem, nil]];
+    }
+    return _chatBoxMoreView;
+}
+
+
+
+
+
 @end
